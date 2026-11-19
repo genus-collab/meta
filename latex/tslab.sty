@@ -1,0 +1,52 @@
+% tslab.sty — TS-Lab workshop PDF style (maintained in TS-Lab/meta)
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tslab}[2026/11/19 TS-Lab workshop style]
+\RequirePackage[T1]{fontenc}
+\RequirePackage{lmodern}
+\RequirePackage[a4paper,margin=2.5cm]{geometry}
+\RequirePackage{amsmath,amssymb,amsthm,mathtools}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage[colorlinks=true,linkcolor=NavyBlue,citecolor=ForestGreen,urlcolor=Maroon]{hyperref}
+\RequirePackage{fancyhdr}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% Project identifier shown in the running head
+\newcommand{\tslab@project}{}
+\newcommand{\tslabproject}[1]{\renewcommand{\tslab@project}{#1}}
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small TS-Lab workshop document}
+\rhead{\small\texttt{\tslab@project}}
+\cfoot{\thepage}
+
+% Claim status tags (charter: AI Use and Methodology, Verification and claim status)
+\newcommand{\tslab@tag}[2]{\mbox{\colorbox{#1}{\scriptsize\sffamily\textcolor{white}{#2}}}}
+\newcommand{\tslabstatus}[1]{%
+  \def\tslab@s{#1}%
+  \def\tslab@c{conjectural}\def\tslab@n{numerically supported}%
+  \def\tslab@a{AI-proposed, unchecked}\def\tslab@p{proved (human-checked)}%
+  \def\tslab@f{formally verified}%
+  \ifx\tslab@s\tslab@c \tslab@tag{Gray}{CONJECTURAL}\else
+  \ifx\tslab@s\tslab@n \tslab@tag{RoyalBlue}{NUMERICALLY SUPPORTED}\else
+  \ifx\tslab@s\tslab@a \tslab@tag{BrickRed}{AI-PROPOSED, UNCHECKED}\else
+  \ifx\tslab@s\tslab@p \tslab@tag{ForestGreen}{PROVED (HUMAN-CHECKED)}\else
+  \ifx\tslab@s\tslab@f \tslab@tag{Plum}{FORMALLY VERIFIED}\else
+  \PackageError{tslab}{Unknown status `#1'}{Use one of the five charter labels.}%
+  \fi\fi\fi\fi\fi\ }
+
+\newcommand{\tslabdisclaimer}{%
+  \begin{center}\fbox{\parbox{0.9\textwidth}{\small
+  \textbf{Workshop document.} This is an in-progress working document of the
+  Topological String Lab, credited to the TS-Lab Collective. It may contain
+  unpolished, AI-assisted material, is not refereed, and is not intended for
+  arXiv. Every claim carries a status label; see the project README for
+  methodology and verification.}}\end{center}}
+\endinput
