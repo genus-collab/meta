@@ -1,0 +1,15 @@
+name: SC proposal
+description: A proposal for Steering Committee decision (async, fixed comment window)
+title: "[SC] "
+labels: ["sc-decision"]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+    validations: {required: true}
+  - type: input
+    id: window
+    attributes:
+      label: Comment window closes on (YYYY-MM-DD)
+    validations: {required: true}

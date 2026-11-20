@@ -1,0 +1,21 @@
+name: Distillation proposal
+description: Propose distilling completed workshop projects into a survey for arXiv
+title: "[Distillation] "
+labels: ["distillation"]
+body:
+  - type: textarea
+    id: thesis
+    attributes:
+      label: Intended scope and thesis of the survey
+    validations: {required: true}
+  - type: textarea
+    id: sources
+    attributes:
+      label: Primary source projects (links)
+    validations: {required: true}
+  - type: textarea
+    id: wg
+    attributes:
+      label: Initial working group members
+      description: Authorship of the survey follows the usual conventions of the field.
+    validations: {required: true}

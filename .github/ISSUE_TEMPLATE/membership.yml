@@ -1,0 +1,18 @@
+name: Community membership
+description: Register as a community member
+title: "[Membership] "
+labels: ["membership"]
+body:
+  - type: input
+    id: name
+    attributes: {label: Name}
+    validations: {required: true}
+  - type: input
+    id: affiliation
+    attributes:
+      label: Institutional affiliation
+      description: An institutional web page listing you is enough for verification.
+    validations: {required: true}
+  - type: input
+    id: strands
+    attributes: {label: Strands of interest}
