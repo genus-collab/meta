@@ -1,6 +1,6 @@
-# TS-Lab · meta
+# GENUS · meta
 
-Administrative repository of the [Topological String Lab](https://github.com/topological-strings-lab).
+Administrative repository of [GENUS](https://github.com/genus-collab).
 
 | What | Where |
 |---|---|
