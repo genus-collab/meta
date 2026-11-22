@@ -1,6 +1,6 @@
-% tslab.sty — GENUS workshop PDF style (maintained in genus-collab/meta)
+% genus.sty — GENUS workshop PDF style (maintained in genus-collab/meta)
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{tslab}[2026/11/19 GENUS workshop style]
+\ProvidesPackage{genus}[2026/11/19 GENUS workshop style]
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
 \RequirePackage[a4paper,margin=2.5cm]{geometry}
@@ -20,29 +20,29 @@
 \newtheorem{remark}[theorem]{Remark}
 
 % Project identifier shown in the running head
-\newcommand{\tslab@project}{}
-\newcommand{\tslabproject}[1]{\renewcommand{\tslab@project}{#1}}
+\newcommand{\genus@project}{}
+\newcommand{\genusproject}[1]{\renewcommand{\genus@project}{#1}}
 \pagestyle{fancy}\fancyhf{}
 \lhead{\small GENUS workshop document}
-\rhead{\small\texttt{\tslab@project}}
+\rhead{\small\texttt{\genus@project}}
 \cfoot{\thepage}
 
 % Claim status tags (charter: AI Use and Methodology, Verification and claim status)
-\newcommand{\tslab@tag}[2]{\mbox{\colorbox{#1}{\scriptsize\sffamily\textcolor{white}{#2}}}}
-\newcommand{\tslabstatus}[1]{%
-  \def\tslab@s{#1}%
-  \def\tslab@c{conjectural}\def\tslab@n{numerically supported}%
-  \def\tslab@a{AI-proposed, unchecked}\def\tslab@p{proved (human-checked)}%
-  \def\tslab@f{formally verified}%
-  \ifx\tslab@s\tslab@c \tslab@tag{Gray}{CONJECTURAL}\else
-  \ifx\tslab@s\tslab@n \tslab@tag{RoyalBlue}{NUMERICALLY SUPPORTED}\else
-  \ifx\tslab@s\tslab@a \tslab@tag{BrickRed}{AI-PROPOSED, UNCHECKED}\else
-  \ifx\tslab@s\tslab@p \tslab@tag{ForestGreen}{PROVED (HUMAN-CHECKED)}\else
-  \ifx\tslab@s\tslab@f \tslab@tag{Plum}{FORMALLY VERIFIED}\else
-  \PackageError{tslab}{Unknown status `#1'}{Use one of the five charter labels.}%
+\newcommand{\genus@tag}[2]{\mbox{\colorbox{#1}{\scriptsize\sffamily\textcolor{white}{#2}}}}
+\newcommand{\genusstatus}[1]{%
+  \def\genus@s{#1}%
+  \def\genus@c{conjectural}\def\genus@n{numerically supported}%
+  \def\genus@a{AI-proposed, unchecked}\def\genus@p{proved (human-checked)}%
+  \def\genus@f{formally verified}%
+  \ifx\genus@s\genus@c \genus@tag{Gray}{CONJECTURAL}\else
+  \ifx\genus@s\genus@n \genus@tag{RoyalBlue}{NUMERICALLY SUPPORTED}\else
+  \ifx\genus@s\genus@a \genus@tag{BrickRed}{AI-PROPOSED, UNCHECKED}\else
+  \ifx\genus@s\genus@p \genus@tag{ForestGreen}{PROVED (HUMAN-CHECKED)}\else
+  \ifx\genus@s\genus@f \genus@tag{Plum}{FORMALLY VERIFIED}\else
+  \PackageError{genus}{Unknown status `#1'}{Use one of the five charter labels.}%
   \fi\fi\fi\fi\fi\ }
 
-\newcommand{\tslabdisclaimer}{%
+\newcommand{\genusdisclaimer}{%
   \begin{center}\fbox{\parbox{0.9\textwidth}{\small
   \textbf{Workshop document.} This is an in-progress working document of
   GENUS, credited to the GENUS collaboration. It may contain
