@@ -8,6 +8,7 @@ Administrative repository of [GENUS](https://github.com/genus-collab).
 | Master index of all projects | [`PROJECTS.md`](PROJECTS.md) |
 | LaTeX style for workshop PDFs | [`latex/genus.sty`](latex/genus.sty) |
 | Project template | `projects/_template/` in each thematic repo |
+| Large data files of projects | [`genus-collab/data`](https://github.com/genus-collab/data) (release assets, with checksums) |
 | Distillation proposals | issues here, *Distillation proposal* template |
 | Membership register | [`members/`](members/) |
 | SC decisions, coordination notes | [`governance/`](governance/), issues labelled `sc-decision` |
